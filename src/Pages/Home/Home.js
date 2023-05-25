@@ -22,7 +22,7 @@ const Home = ()=>{
             setTasks(response.data);
         })
         .catch((error)=>{
-            alert(error);
+            // alert(error);
         })
     }
 

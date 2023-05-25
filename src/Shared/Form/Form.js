@@ -96,9 +96,12 @@ const Form = (props) => {
     // ===============> Store Data <===================
     const storeTask = async()=>{
         try{
-            await axiosInstance.post("/tasks", task)
+            await axiosInstance.post("/tasks", task);
         }catch(error){
-            alert(error.message);
+            // alert(error.message);
+            if(error.message == "Request failed with status code 500"){
+                navigate('/');
+            }
         }
     }
     // ===============> End Store Data <===================

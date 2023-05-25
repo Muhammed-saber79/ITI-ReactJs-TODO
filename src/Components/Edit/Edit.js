@@ -46,7 +46,7 @@ const Delete = (props)=>{
             const res = await axiosInstance.get(`/tasks/${props.id}`)
             setOldTask(res.data);
         }catch(error){
-            alert(error);
+            // alert(error);
         }
     }
 
@@ -82,7 +82,10 @@ const Delete = (props)=>{
                     await updateTask().then(()=>{
                         handleClose();
                         navigate('/');
-                    }).catch((error)=>{alert(error)})
+                    }).catch((error)=>{
+                        // alert(error)
+                        navigate('/');
+                    })
                 }else{
                     e.preventDefault();
                 }
@@ -103,7 +106,10 @@ const Delete = (props)=>{
                 await updateTask().then(()=>{
                     handleClose();
                     navigate('/');
-                }).catch((error)=>{alert(error)})
+                }).catch((error)=>{
+                    // alert(error)
+                    navigate('/');
+                })
             }else{
                 e.preventDefault();
             }
@@ -117,7 +123,8 @@ const Delete = (props)=>{
         try{
             await axiosInstance.put(`/tasks/${oldTask.id}`, oldTask)
         }catch(error){
-            alert(error.message);
+            // alert(error.message);
+            navigate('/');
         }
     }
     // ===============> End Update Date <===================

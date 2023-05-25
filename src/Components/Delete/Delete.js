@@ -31,7 +31,7 @@ const Delete = (props)=>{
         try{
             await axiosInstance.delete(`/tasks/${props.id}`);
         }catch(error){
-            alert(error);
+            // alert(error);
         }
         props.onDelete();
         setOpen(false);
